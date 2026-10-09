@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oferta Exclusiva - Kit Premium</title>
+    <style>
+        /* Estilos focados em conversão e usabilidade no celular */
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background-color: #f4f4f9; 
+            margin: 0; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            min-height: 100vh; 
+            padding: 20px; 
+        }
+        .container { 
+            background: #fff; 
+            padding: 30px 20px; 
+            border-radius: 12px; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+            max-width: 400px; 
+            width: 100%; 
+            text-align: center; 
+        }
+        h1 { color: #333; font-size: 24px; margin-bottom: 10px; line-height: 1.2; }
+        p { color: #555; font-size: 15px; margin-bottom: 25px; line-height: 1.4; }
+        .form-group { margin-bottom: 15px; text-align: left; }
+        label { display: block; font-size: 14px; color: #333; margin-bottom: 5px; font-weight: 600; }
+        input { 
+            width: 100%; 
+            padding: 12px; 
+            border: 1px solid #ccc; 
+            border-radius: 8px; 
+            font-size: 15px; 
+            box-sizing: border-box; 
+            transition: border-color 0.3s;
+        }
+        input:focus { 
+            border-color: #25D366; 
+            outline: none; 
+            box-shadow: 0 0 5px rgba(37,211,102,0.3); 
+        }
+        button { 
+            width: 100%; 
+            padding: 15px; 
+            background-color: #25D366; 
+            color: white; 
+            border: none; 
+            border-radius: 8px; 
+            font-size: 16px; 
+            font-weight: bold; 
+            cursor: pointer; 
+            transition: background 0.3s; 
+            margin-top: 10px; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            gap: 10px; 
+        }
+        button:hover { background-color: #128C7E; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Renove sua Cozinha! 🍳</h1>
+        <p>Preencha os dados abaixo para liberar <strong>50% de desconto</strong> no Kit de Utensílios Premium diretamente no WhatsApp.</p>
+        
+        <form id="leadForm">
+            <div class="form-group">
+                <label for="nome">Seu Nome</label>
+                <input type="text" id="nome" required placeholder="Digite seu nome">
+            </div>
+            <div class="form-group">
+                <label for="idade">Sua Idade</label>
+                <input type="number" id="idade" required placeholder="Ex: 35">
+            </div>
+            <div class="form-group">
+                <label for="cidade">Sua Cidade</label>
+                <input type="text" id="cidade" required placeholder="Ex: São Bento do Una">
+            </div>
+            
+            <button type="submit">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+                </svg>
+                Garantir Desconto
+            </button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('leadForm').addEventListener('submit', function(e) {
+            e.preventDefault(); 
+            
+            const nome = document.getElementById('nome').value;
+            const idade = document.getElementById('idade').value;
+            const cidade = document.getElementById('cidade').value;
+            
+            const produto = "Kit de Utensílios Domésticos Premium";
+            const numeroZap = "5581995957114"; 
+            
+            // Texto formatado que chegará no seu celular
+            const mensagem = `Olá! Meu nome é ${nome}, tenho ${idade} anos, sou de ${cidade} e quero aproveitar a oferta do ${produto}.`;
+            
+            const linkZap = `https://wa.me/${numeroZap}?text=${encodeURIComponent(mensagem)}`;
+            
+            // Envia o usuário direto para o app do WhatsApp
+            window.location.href = linkZap;
+        });
+    </script>
+</body>
+</html>
